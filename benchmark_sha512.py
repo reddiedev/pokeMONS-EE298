@@ -31,15 +31,7 @@ def main():
         print(yellow("Input: ") + str(input_data))
         print()
 
-    print(magenta("OWN IMPLEMENTATION"))
-    own_start = time.time()
-    own_hash = own_hasher.sha512(input_data)
-    own_end = time.time()
-    own_time = own_end - own_start
-    print(magenta("Hash: ") + own_hash)
-    print(magenta("Time: ") + str(own_time) + " seconds")
     print()
-
     print(magenta("SOTA IMPLEMENTATION"))
     sota_start = time.time()
     sota_hash = sota_hasher.sha512(input_data)
@@ -48,6 +40,16 @@ def main():
 
     print(magenta("Hash: ") + sota_hash)
     print(magenta("Time: ") + str(sota_time) + " seconds")
+
+    print()
+    print(magenta("OWN IMPLEMENTATION"))
+    own_start = time.time()
+    own_hash = own_hasher.sha512(input_data)
+    own_end = time.time()
+    own_time = own_end - own_start
+    print(magenta("Hash: ") + own_hash)
+    print(magenta("Time: ") + str(own_time) + " seconds")
+
 
     percent_increase = ((own_time - sota_time) / sota_time) * 100
 
