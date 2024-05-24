@@ -8,6 +8,8 @@ __ay_sem__ = "AY 2023-2024 2nd Semester"
 
 import argparse
 import os
+import time
+from simple_chalk import green, magenta, yellow, red
 
 ### Main reference: https://en.wikipedia.org/wiki/SHA-2#Pseudocode
 
@@ -210,6 +212,7 @@ class Hasher:
 
 
 def main():
+    print(green("MP1: Hashing Speed Benchmarks"))
     parser = argparse.ArgumentParser(description="Accepts file or string input")
     parser.add_argument("input", help="Input can be either a file path or a string.")
 
@@ -219,15 +222,25 @@ def main():
     input_data = ""
     hasher = Hasher()
 
-    if os.path.isfile(input_arg):
-        with open(input_arg, "r") as file:
+    current_path = os.getcwd()
+    file_path = os.path.join(current_path,input_arg)
+
+    if os.path.isfile(file_path):
+        with open(file_path, "rb") as file:
             input_data = file.read()
 
     else:
         input_data = str(input_arg).encode("utf-8")
+        print(yellow("Input: ") + str(input_data))
+        print()
 
-    hash = hasher.sha512(input_data)
-    print(hash)
+    own_start = time.time()
+    own_hash = hasher.sha512(input_data)
+    own_end = time.time()
+    own_time = own_end - own_start
+
+    print(magenta("Hash: ") + own_hash)
+    print(magenta("Time: ") + str(own_time) + " seconds")
 
     return hash
 

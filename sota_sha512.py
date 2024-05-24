@@ -7,5 +7,5 @@ class SOTA_Hasher():
         pass
     
     def sha512(self,input):
-        result = hashlib.sha512(input.encode()) 
-        return result
+        result = hashlib.sha512(input) 
+        return result.hexdigest()
