@@ -212,7 +212,7 @@ class Hasher:
 
 
 def main():
-    print(green("MP1: Hashing Speed Benchmarks"))
+    print(green("MP1: Hashing v16"))
     parser = argparse.ArgumentParser(description="Accepts file or string input")
     parser.add_argument("input", help="Input can be either a file path or a string.")
 
