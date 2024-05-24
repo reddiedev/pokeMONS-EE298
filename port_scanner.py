@@ -62,6 +62,9 @@ def main():
     parser.add_argument(
         "-sV", action="store_true", help="Implement Service Name/Banner grabbing"
     )
+    parser.add_argument(
+        "-sU", action="store_true", help="Implement UDP Scanning (TCP by default)"
+    )
     parser.add_argument("-p", type=str, help="Specify ports to be scanned")
 
     args = parser.parse_args()
@@ -78,6 +81,7 @@ def main():
     print(dim(scanner.addresses[:5]))
     print(yellow("Ports: ") + bold(len(scanner.ports)) + " ports")
     print(dim(scanner.ports[:10]))
+    print(yellow("Scanning Type: ") + "UDP" if args.sU else "TCP")
     print(yellow("OS Detection: ") + bold(str(args.O)))
     print(yellow("Services Detection: ") + bold(str(args.sV)))
 
