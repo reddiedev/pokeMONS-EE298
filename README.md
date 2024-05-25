@@ -14,6 +14,10 @@ python3 sha512.py "hello world"
 ```bash
 python3 sha512.py input.pdf
 ```
+- accepts benchmarking tests using `hashlib` module in `sota_sha512.py`
+```bash
+python3 benchmark_sha512.py "hello world!"
+```
 
 ## Machine Problem 2: Port Scanner v16
 Implementing an NMAP-like Port Scanner in Python
