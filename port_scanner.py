@@ -88,7 +88,7 @@ class PortScanner:
             else:  # ip address or hostname
                 addresses.append(item)
 
-        self.addresses = addresses
+        self.addresses = list(set(addresses))
         return
 
     def generatePorts(self, input: str):  # "1-2,23,4-5,10-1000"
@@ -104,7 +104,7 @@ class PortScanner:
             else:
                 ports.append([int(subrange)])
 
-        self.ports = list(itertools.chain(*ports))
+        self.ports = list(set(list(itertools.chain(*ports))))
 
     def getPortServiceBanner(self, target, port):
         for _ in range(self.max_retries):
