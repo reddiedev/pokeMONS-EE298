@@ -28,7 +28,7 @@ def main():
 
     else:
         input_data = str(input_arg).encode("utf-8")
-        print(yellow("Input: ") + str(input_data))
+        print(yellow("Input: ") + str(input_arg))
         print()
 
     print()
