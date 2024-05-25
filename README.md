@@ -18,6 +18,14 @@ python3 sha512.py input.pdf
 ```bash
 python3 benchmark_sha512.py "hello world!"
 ```
+- to download 100MB test file, you may use the sample below
+```bash
+curl -O https://files.testfile.org/PDF/10MB-TESTFILE.ORG.pdf
+```
+
+```bash
+curl -O https://files.testfile.org/PDF/100MB-TESTFILE.ORG.pdf
+```
 
 ## Machine Problem 2: Port Scanner v16
 Implementing an NMAP-like Port Scanner in Python
