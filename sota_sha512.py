@@ -1,11 +1,10 @@
-import hashlib 
+import hashlib
 
 
-
-class SOTA_Hasher():
+class SOTA_Hasher:
     def __init__(self) -> None:
         pass
-    
-    def sha512(self,input):
-        result = hashlib.sha512(input) 
+
+    def sha512(self, input):
+        result = hashlib.sha512(input)
         return result.hexdigest()

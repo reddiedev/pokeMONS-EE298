@@ -223,7 +223,7 @@ def main():
     hasher = Hasher()
 
     current_path = os.getcwd()
-    file_path = os.path.join(current_path,input_arg)
+    file_path = os.path.join(current_path, input_arg)
 
     if os.path.isfile(file_path):
         with open(file_path, "rb") as file:
