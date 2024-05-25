@@ -204,7 +204,7 @@ class Hasher:
         # Produce the final hashed message. Concactenate the hex of each hash value
         hashed_values = []
         for element in hash_init:
-            hashed_values.append(hex(element)[2:])
+            hashed_values.append(format(element, "016x"))
 
         hashed_message = "".join(hashed_values)
 
